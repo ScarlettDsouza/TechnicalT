@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a string: ");
+        String input = scanner.nextLine();
+        scanner.close();
+        System.out.println("Result: " + catDog(input));
+    }
+    static boolean catDog(String str) {
+        int catCount = 0;
+        int dogCount = 0;
+
+        for (int i = 0; i <= str.length() - 3; i++) {
+            if (str.substring(i, i + 3).equals("cat")) {
+                catCount++;
+            } else if (str.substring(i, i + 3).equals("dog")) {
+                dogCount++;
+            }
+        }
+        return catCount == dogCount;
+    }
+}
